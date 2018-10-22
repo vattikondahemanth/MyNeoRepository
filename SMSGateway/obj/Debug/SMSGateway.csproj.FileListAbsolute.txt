@@ -1,0 +1,15 @@
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\SMSGateway.exe.config
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\SMSGateway.exe
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\SMSGateway.pdb
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Debug\SMSGateway.csproj.CoreCompileInputs.cache
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Debug\SMSGateway.exe
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Debug\SMSGateway.pdb
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\SMSGateway.exe.manifest
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\SMSGateway.application
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Debug\SMSGateway.exe.manifest
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Debug\SMSGateway.application
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\Newtonsoft.Json.dll
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\Newtonsoft.Json.xml
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Debug\SMSGateway.csproj.CopyComplete
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\Autofac.dll
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Debug\Autofac.xml

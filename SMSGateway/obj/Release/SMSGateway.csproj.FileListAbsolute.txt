@@ -1,0 +1,15 @@
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\SMSGateway.exe.config
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\SMSGateway.exe.manifest
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\SMSGateway.application
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\SMSGateway.exe
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\SMSGateway.pdb
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\Autofac.dll
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\Newtonsoft.Json.dll
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\Autofac.xml
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\bin\Release\Newtonsoft.Json.xml
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Release\SMSGateway.csproj.CoreCompileInputs.cache
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Release\SMSGateway.exe.manifest
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Release\SMSGateway.application
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Release\SMSGateway.csproj.CopyComplete
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Release\SMSGateway.exe
+E:\SBIMFProjects\SBIMFSchedulers\SMSGateway\obj\Release\SMSGateway.pdb
