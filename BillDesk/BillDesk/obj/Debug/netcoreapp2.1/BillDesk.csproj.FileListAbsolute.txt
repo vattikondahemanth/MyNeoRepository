@@ -1,0 +1,11 @@
+C:\Users\sagars\source\repos\BillDesk\BillDesk\bin\Debug\netcoreapp2.1\BillDesk.deps.json
+C:\Users\sagars\source\repos\BillDesk\BillDesk\bin\Debug\netcoreapp2.1\BillDesk.runtimeconfig.json
+C:\Users\sagars\source\repos\BillDesk\BillDesk\bin\Debug\netcoreapp2.1\BillDesk.runtimeconfig.dev.json
+C:\Users\sagars\source\repos\BillDesk\BillDesk\bin\Debug\netcoreapp2.1\BillDesk.dll
+C:\Users\sagars\source\repos\BillDesk\BillDesk\bin\Debug\netcoreapp2.1\BillDesk.pdb
+C:\Users\sagars\source\repos\BillDesk\BillDesk\obj\Debug\netcoreapp2.1\BillDesk.csprojAssemblyReference.cache
+C:\Users\sagars\source\repos\BillDesk\BillDesk\obj\Debug\netcoreapp2.1\BillDesk.csproj.CoreCompileInputs.cache
+C:\Users\sagars\source\repos\BillDesk\BillDesk\obj\Debug\netcoreapp2.1\BillDesk.AssemblyInfoInputs.cache
+C:\Users\sagars\source\repos\BillDesk\BillDesk\obj\Debug\netcoreapp2.1\BillDesk.AssemblyInfo.cs
+C:\Users\sagars\source\repos\BillDesk\BillDesk\obj\Debug\netcoreapp2.1\BillDesk.dll
+C:\Users\sagars\source\repos\BillDesk\BillDesk\obj\Debug\netcoreapp2.1\BillDesk.pdb
