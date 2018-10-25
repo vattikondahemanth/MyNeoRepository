@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="ProjectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Website">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Distributor">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Institutional">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mobile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProjectType" nillable="true" type="tns:ProjectType" />
+  <xs:complexType name="FolioDetailCaseCreation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FolioNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteractionSubType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteractionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvestorType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsIntegrated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreferredTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolioDetailCaseCreation" nillable="true" type="tns:FolioDetailCaseCreation" />
+  <xs:complexType name="ServiceResponseObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponseObject" nillable="true" type="tns:ServiceResponseObject" />
+  <xs:complexType name="ServiceResponseForWebsiteOfInvestorPANDetailsQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseForWebsiteOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InvestorPANDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:InvestorPANDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseForWebsiteOfInvestorPANDetailsQ9LSTXg_S" nillable="true" type="tns:ServiceResponseForWebsiteOfInvestorPANDetailsQ9LSTXg_S" />
+  <xs:complexType name="ServiceResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnMsg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResult" nillable="true" type="tns:ServiceResult" />
+  <xs:complexType name="InvestorPANDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_ENTRYDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_HOLD_DEACTIVE_RMKS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_IPV_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_KYC_MODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_MODDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_STATUSDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_UPDT_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAMSKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CVLKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOTEXKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvestorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsKYC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KARVYKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KRAServiceProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NDMLKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isCKY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvestorPANDetails" nillable="true" type="tns:InvestorPANDetails" />
+</xs:schema>

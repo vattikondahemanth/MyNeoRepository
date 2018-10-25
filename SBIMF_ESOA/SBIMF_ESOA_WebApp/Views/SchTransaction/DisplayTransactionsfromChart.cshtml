@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SBIMF_ESOA_CoreEntities.Trans>
+
+@{
+    ViewBag.Title = "DisplayTransactionsfromChart";
+}
+
+<h4>Scheme Tranactions</h4>
+
+<b>Folio No.: @Model.First().No</b>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N_units)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_units)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.N_units)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_units)
+        </td>
+    </tr>
+}
+
+</table>

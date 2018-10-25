@@ -1,0 +1,226 @@
+﻿
+@{
+    ViewBag.Title = "ReturnValueCalculator";
+}
+
+<script type="text/javascript">
+            var key = @System.Convert.ToString(Session["Pass_Enc_Key"]).Trim()
+</script>
+<section class="tab-bottom-area mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-9">
+                <div class="row">
+                    <div class="col-md-12 tab-area">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="return-value-calc" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="family-solution-content box-shadow p-3 p-md-4 mt-5">
+                                    <div class="more">
+                                        <h4>How does a Mutual Fund Return Value Calculator work?</h4>
+                                        Mutual Fund Return calculator helps you calculate mutual fund estimated returns on the capital invested. When we talk about investments, the most important aspect is what kind of returns can be expected. Returns can be quite varied in nature over a long period of time. Hence, it would be difficult to figure out what the eventual corpus would be at different expected rate of returns. SBI Mutual Funds Returns Calculator takes care of this specific need, so now while you concentrate on your financial planning our ready-to-use MF Return Calculator, will reveal how much your net worth would be down the line, taking into consideration the various variables including the type of investment – like SIP or Lumpsum along-with the investment duration and expected rate of return.<br /><br />
+                                        Fill in the fields accordingly to find out how much would have been your Principal Investment and your estimated Accumulated Wealth at the end of your tentative investment tenure.
+                                    </div>
+                                    <div class="separator"></div>
+                                    <div class="row calculator-area">
+                                        <div class="col-sm-12">
+                                            <p>Find out what the returns on your current investments will be valued at, in future</p>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="internal-fields">
+                                                        <div class="row ">
+                                                            <div class="col-12 col-md-3"><label class="mb-2 mb-md-0">Investor Type</label></div>
+                                                            <div class="col-6 col-md-3">
+                                                                <div class="folio-options">
+                                                                    <div class="pep-option">
+                                                                        <input type="radio" class="investType" id="rdbSip" value="SIP" name="investorType">
+                                                                        <label class="mb-0" for="rdbSip">SIP</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 col-sm-3">
+                                                                <div class="folio-options">
+                                                                    <div class="pep-option">
+                                                                        <input type="radio" class="investType" id="rdblumpsum" value="LumpSum" name="investorType" checked>
+                                                                        <label class="mb-0" for="rdblumpsum">Lumpsum</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="internal-fields">
+                                                        <div class="row  mb-1">
+                                                            <div class="col-12 col-md-3"><label class="mb-2 mb-md-0">Investment Amount In</label></div>
+                                                            <div class="col-5 col-md-3">
+                                                                <div class="folio-options">
+                                                                    <div class="pep-option">
+                                                                        <input type="radio" name="investment" value="thousands" id="rdbthousands" checked>
+                                                                        <label class="mb-0" for="rdbthousands">Thousands</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class="folio-options">
+                                                                    <div class="pep-option">
+                                                                        <input type="radio" name="investment" value="lacs" id="rdblacs">
+                                                                        <label class="mb-0" for="rdblacs">Lacs</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class="folio-options">
+                                                                    <div class="pep-option">
+                                                                        <input type="radio" name="investment" value="Crores" id="rdbcrores">
+                                                                        <label class="mb-0" for="rdbcrores">Crores</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="slider-box rel slider-wid marB30 Amount mt-3">
+                                                            <div id="sliderInvestment" class="slider">
+                                                            </div>
+                                                            <span class="slider-min sliderAmtMin">1K</span>
+                                                            <span class="slider-max sliderAmtMax">99K</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="internal-fields">
+                                                        <label class="mb-2 mb-md-0">Investment Duration</label>
+                                                        <div class="slider-box rel slider-wid marB30 mt-3">
+                                                            <div id="sliderDuration" class="slider">
+                                                            </div>
+                                                            <span class="slider-min sliderYearsMin">1 Yr</span>
+                                                            <span class="slider-max sliderYearsMax">30 Yrs</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>Expected Rate of Return</label>
+                                                    <div class="custom-drop">
+                                                        <select name="expectedReturn" id="ddlexpectedReturn" class="form-control">
+                                                            <option value="6%">5%</option>
+                                                            <option value="6%">6%</option>
+                                                            <option value="7%">7%</option>
+                                                            <option value="8%">8%</option>
+                                                            <option value="9%">9%</option>
+                                                            <option value="10%">10%</option>
+                                                            <option value="11%">11%</option>
+                                                            <option value="11%" selected="">12%</option>
+                                                            <option value="11%">13%</option>
+                                                            <option value="11%">14%</option>
+                                                            <option value="11%">15%</option>
+                                                            <option value="11%">16%</option>
+                                                            <option value="11%">17%</option>
+                                                            <option value="11%">18%</option>
+                                                            <option value="11%">19%</option>
+                                                            <option value="11%">20%</option>
+                                                            <option value="11%">21%</option>
+                                                            <option value="11%">22%</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <button type="button" id="btnCalculate" class="btn btn-lg btn-success mt-4">Calculate</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result-area mt-4 mt-md-5" id="dvResult" style="display:none;">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="result-left box-shadow p-3 p-md-4">
+                                                <div class="h5">Result</div>
+                                                <p>For the selected rate of return, at the end of </p>
+                                                <div class="total-result">
+                                                    <span><span class="yearsInvestment">1</span> years</span>,  your investment of<br />
+                                                    <span>&#x20b9;<span class="principalinvested">1,000.00</span></span>, will grow to<br />
+                                                    <span>&#x20b9;<span class="finalresult">1,120.00</span></span>.
+                                                </div>
+                                                <img src="../images/return-value-img.png" alt="" class="img-fluid">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4 d-flex mt-4 mt-md-0">
+                                            <div class="result-right box-shadow p-3 p-md-4">
+                                                <form class="text-left text-sm-center">
+                                                    <div class="h6 mb-3">Enter your PAN to start investing</div>
+                                                    <input type="text" name="Enter PAN" placeholder="Enter PAN" class="form-control" id="txtPAN" readonly="readonly" value="@Session["PAN_No"].ToString()">
+                                                    <button type="button" class="btn btn-primary mt-3 submitPAN" id="submitPAN">Submit</button>
+                                                    <span class="errorPAN" style="color: white"></span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade kyc-varified-modal" id="kyc-varified-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="popup-icon">
+                    <img src="../images/thumb-icon.png" alt="" class="img-responsive">
+                </div>
+                <p>
+                    Great you are KYC verified.
+                    <br />
+                    <img src="../images/please-wait-loader.gif" alt="Please Wait" class="img-responsive please-wait-loader" />
+                    while we redirect you to help find a suitable fund
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade kyc-varified-modal" id="kyc-not-varified-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="popup-icon">
+                    <img src="../images/not-varified-icon.png" alt="" class="img-responsive">
+                </div>
+                <p>Your KYC is not verified.</p>
+                <div class="row">
+                    <div class="col-md-6"><a href="https://uatweb.sbimf.com/en-us/e-kyc/online-investment" target="_blank" class="btn btn-default mb-3 mb-md-0">Do e-KYC</a></div>  @*onclick="window.location.href='https://uatweb.sbimf.com/en-us/e-kyc/online-investment'"*@
+                    <div class="col-md-6"><button type="button" class="btn btn-primary" onclick="window.location.href='https://uatweb.sbimf.com/en-us/PDF/Form/KYC%20Forms/KYC%20Form%20-%20Individual.pdf'">Downloed KYC Form</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="txtamt" value="10000" />
+<input type="hidden" id="txtyears" value="1" />
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script src="~/Scripts/aes.js"></script>
+    <script src="~/Scripts/JS/Common.js"></script>
+    <script type="text/javascript" src="~/Scripts/Slider.js"></script>
+    <script type="text/javascript" src="~/Scripts/JS/Calc/ReturnValCalc.js"></script>
+
+}
+
+

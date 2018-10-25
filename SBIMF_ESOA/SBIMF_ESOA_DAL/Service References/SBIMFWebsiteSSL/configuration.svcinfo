@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;Ws3&quot; /&gt;" bindingType="basicHttpBinding" name="Ws3" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;Ws31&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="Ws31" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://192.168.26.60/SBIMF_WebSiteService.svc/Wshttp&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Ws3&quot; contract=&quot;SBIMFWebsiteSSL.ISBIMF_WebSiteService&quot; name=&quot;Ws3&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://192.168.26.60/SBIMF_WebSiteService.svc/Wshttp&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Ws3&quot; contract=&quot;SBIMFWebsiteSSL.ISBIMF_WebSiteService&quot; name=&quot;Ws3&quot; /&gt;" contractName="SBIMFWebsiteSSL.ISBIMF_WebSiteService" name="Ws3" />
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://uatservices.sbimf.com/SBIMF_WebSiteService.svc/Wshttp&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Ws31&quot; contract=&quot;SBIMFWebsiteSSL.ISBIMF_WebSiteService&quot; name=&quot;Ws31&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://uatservices.sbimf.com/SBIMF_WebSiteService.svc/Wshttp&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Ws31&quot; contract=&quot;SBIMFWebsiteSSL.ISBIMF_WebSiteService&quot; name=&quot;Ws31&quot; /&gt;" contractName="SBIMFWebsiteSSL.ISBIMF_WebSiteService" name="Ws31" />
+  </endpoints>
+</configurationSnapshot>

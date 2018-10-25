@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<link href="~/Content/themes/base/daterangepicker.css" rel="stylesheet" />
+<div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 40%">
+    <i class="fa fa-calendar"></i>&nbsp;
+    <span></span> <i class="fa fa-caret-down"></i>  
+</div>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+<script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+<script type="text/javascript" src="~/Scripts/daterangepicker.js"></script>
+
+<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>  
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    //forgeryId = $("#forgeryToken").val();
+
+    var Categories = [];
+
+                for (var i = 0; i < 6; i++) {
+                    var point = [];
+                    point.push('catname'+ i);
+                    point.push(Math.round(125035.00));
+                    Categories.push(point);
+                }
+
+      chart = new Highcharts.Chart(
+      {
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function() {
+                            return Math.round(this.percentage,2) + ' %';
+                        },
+                        distance: -30
+                    },
+                    showInLegend: true
+                }
+      },
+      legend: { width: 500  },
+      tooltip: {formatter: function () {
+            return '<b style="color:green;">' + this.point.name + '</b>: ' + this.point.percentage + '<br/>index:' + this.point.index;
+        } },
+       title: {text: ''},
+       series:[
+          {
+             "data": Categories,
+              type: 'pie',
+              animation: false,
+              innerSize: '30%',
+              slicedOffset: 0,
+              colors: [ '#00a8e9','#0187ce', '#04c14b', '#03ac13', '#b7b7b7', '#c7c7c7'],
+              point:{
+                  events:{
+                      click: function (event) {
+                          alert(event.point.index);
+                      }
+                  }
+              }
+          }
+       ],
+       "chart":{
+          "renderTo":"container"
+       },
+    });
+
+    //setting from date to current fiscal year start date
+    var today = new Date();
+    var curMonth = today.getMonth();
+
+    var fiscalDt = "";
+    if (curMonth > 3) {
+        fiscalDt = '01/Apr/' + today.getFullYear().toString();
+    }
+    else {
+        fiscalDt = '01/Apr/' + (today.getFullYear() - 1).toString();
+    }
+    //end: setting from date to current fiscal year start date
+
+    var month_names = ["Jan", "Feb", "Mar",
+                      "Apr", "May", "Jun",
+                      "Jul", "Aug", "Sep",
+                      "Oct", "Nov", "Dec"];
+    var curr_dt = today.getDate() + '/' + month_names[today.getMonth()] + '/' + today.getFullYear();
+
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        alert(start.format('DD/MMM/YYYY') + '--' + end.format('DD/MMM/YYYY'));
+        $('#reportrange span').html(start.format('DD/MMM/YYYY') + ' - ' + end.format('DD/MMM/YYYY'));
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,  
+        endDate: end,
+        maxDate: new Date(),
+        ranges: {
+           'Last 3 Months': [moment().subtract(3, 'month')],
+           'Last 6 Months': [moment().subtract(6, 'month')],
+           'Last 1 year': [moment().subtract(1, 'year')]
+        }
+    }, cb);
+    cb(start, end);
+
+    $('#reportrange span').html(fiscalDt + ' - ' + curr_dt);
+
+
+
+
+
+    });
+</script>

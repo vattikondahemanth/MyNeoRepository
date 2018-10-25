@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1114d910-16ea-47f0-8dd6-af8cb3a58f79" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.26.60/SBIMF_WebSiteService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SBIMF_WebSiteService.wsdl" MetadataType="Wsdl" ID="6e96127c-451a-45b2-86c8-29a385e7bb5d" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?wsdl" />
+    <MetadataFile FileName="SBIMF_WebSiteService.xsd" MetadataType="Schema" ID="809b178a-9da8-4ba0-b642-cc9786e680ac" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SBIMF_WebSiteService1.xsd" MetadataType="Schema" ID="637a19a3-e4c6-49e4-8978-66575d2400ee" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SBIMF_WebSiteService2.xsd" MetadataType="Schema" ID="23277024-856c-45c2-a399-4f3ad807e26a" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SBIMF_WebSiteService3.xsd" MetadataType="Schema" ID="aab9f525-5456-479b-87f2-a9cd6d399124" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SBIMF_WebSiteService4.xsd" MetadataType="Schema" ID="94273589-3703-4272-81a9-4df7ad4fc1e5" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SBIMF_WebSiteService.disco" MetadataType="Disco" ID="3c39238a-15f2-4ed8-9078-c8d850775fc3" SourceId="1" SourceUrl="http://192.168.26.60/SBIMF_WebSiteService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

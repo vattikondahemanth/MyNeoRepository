@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SBIMF_WebSiteService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="Ws31_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+      <xsd:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISBIMF_WebSiteService_SaveBranchDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBranchDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SaveBranchDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBranchDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetBranchByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchByID" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetBranchByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetBranchesByCityStateID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchesByCityStateID" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetBranchesByCityStateID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchesByCityStateIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetAllBranches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBranches" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetAllBranches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SBIMFJSONService_InputMessage">
+    <wsdl:part name="parameters" element="tns:SBIMFJSONService" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SBIMFJSONService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SBIMFJSONServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SBIMFJSONService_tilde_InputMessage">
+    <wsdl:part name="parameters" element="tns:SBIMFJSONService_tilde" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SBIMFJSONService_tilde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SBIMFJSONService_tildeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SingleTableJSONService_InputMessage">
+    <wsdl:part name="parameters" element="tns:SingleTableJSONService" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_SingleTableJSONService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SingleTableJSONServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetPortfolioDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPortfolioDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetPortfolioDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPortfolioDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetAllActiveFunds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActiveFunds" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetAllActiveFunds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllActiveFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_NewOrAddlPurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewOrAddlPurchase" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_NewOrAddlPurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewOrAddlPurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetSIPData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSIPData" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetSIPData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSIPDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_Insert_FeedBackForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_FeedBackForm" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_Insert_FeedBackForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_FeedBackFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetPortfolioDetailsForSBIOneView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPortfolioDetailsForSBIOneView" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetPortfolioDetailsForSBIOneView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPortfolioDetailsForSBIOneViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_Insert_WriteToUs_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_WriteToUs" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_Insert_WriteToUs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_WriteToUsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetBankCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankCode" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetBankCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_UpdateGenerateAccountFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGenerateAccountFile" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_UpdateGenerateAccountFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGenerateAccountFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_VerifyPANDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyPANDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_VerifyPANDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyPANDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetInvestorPortfolioDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvestorPortfolioDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetInvestorPortfolioDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvestorPortfolioDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_QuickInvestorInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuickInvestorInformation" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_QuickInvestorInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuickInvestorInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetWebsiteInvestorPortfolioDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebsiteInvestorPortfolioDetails" />
+  </wsdl:message>
+  <wsdl:message name="ISBIMF_WebSiteService_GetWebsiteInvestorPortfolioDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWebsiteInvestorPortfolioDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISBIMF_WebSiteService">
+    <wsdl:operation name="SaveBranchDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SaveBranchDetails" message="tns:ISBIMF_WebSiteService_SaveBranchDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SaveBranchDetailsResponse" message="tns:ISBIMF_WebSiteService_SaveBranchDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetBranchByID" message="tns:ISBIMF_WebSiteService_GetBranchByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetBranchByIDResponse" message="tns:ISBIMF_WebSiteService_GetBranchByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchesByCityStateID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetBranchesByCityStateID" message="tns:ISBIMF_WebSiteService_GetBranchesByCityStateID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetBranchesByCityStateIDResponse" message="tns:ISBIMF_WebSiteService_GetBranchesByCityStateID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBranches">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetAllBranches" message="tns:ISBIMF_WebSiteService_GetAllBranches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetAllBranchesResponse" message="tns:ISBIMF_WebSiteService_GetAllBranches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SBIMFJSONService">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService" message="tns:ISBIMF_WebSiteService_SBIMFJSONService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONServiceResponse" message="tns:ISBIMF_WebSiteService_SBIMFJSONService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SBIMFJSONService_tilde">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService_tilde" message="tns:ISBIMF_WebSiteService_SBIMFJSONService_tilde_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService_tildeResponse" message="tns:ISBIMF_WebSiteService_SBIMFJSONService_tilde_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SingleTableJSONService">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SingleTableJSONService" message="tns:ISBIMF_WebSiteService_SingleTableJSONService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/SingleTableJSONServiceResponse" message="tns:ISBIMF_WebSiteService_SingleTableJSONService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetails" message="tns:ISBIMF_WebSiteService_GetPortfolioDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetailsResponse" message="tns:ISBIMF_WebSiteService_GetPortfolioDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveFunds">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetAllActiveFunds" message="tns:ISBIMF_WebSiteService_GetAllActiveFunds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetAllActiveFundsResponse" message="tns:ISBIMF_WebSiteService_GetAllActiveFunds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewOrAddlPurchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/NewOrAddlPurchase" message="tns:ISBIMF_WebSiteService_NewOrAddlPurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/NewOrAddlPurchaseResponse" message="tns:ISBIMF_WebSiteService_NewOrAddlPurchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSIPData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetSIPData" message="tns:ISBIMF_WebSiteService_GetSIPData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetSIPDataResponse" message="tns:ISBIMF_WebSiteService_GetSIPData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_FeedBackForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/Insert_FeedBackForm" message="tns:ISBIMF_WebSiteService_Insert_FeedBackForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/Insert_FeedBackFormResponse" message="tns:ISBIMF_WebSiteService_Insert_FeedBackForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioDetailsForSBIOneView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetailsForSBIOneView" message="tns:ISBIMF_WebSiteService_GetPortfolioDetailsForSBIOneView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetailsForSBIOneViewResponse" message="tns:ISBIMF_WebSiteService_GetPortfolioDetailsForSBIOneView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WriteToUs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/Insert_WriteToUs" message="tns:ISBIMF_WebSiteService_Insert_WriteToUs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/Insert_WriteToUsResponse" message="tns:ISBIMF_WebSiteService_Insert_WriteToUs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetBankCode" message="tns:ISBIMF_WebSiteService_GetBankCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetBankCodeResponse" message="tns:ISBIMF_WebSiteService_GetBankCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenerateAccountFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/UpdateGenerateAccountFile" message="tns:ISBIMF_WebSiteService_UpdateGenerateAccountFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/UpdateGenerateAccountFileResponse" message="tns:ISBIMF_WebSiteService_UpdateGenerateAccountFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPANDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/VerifyPANDetails" message="tns:ISBIMF_WebSiteService_VerifyPANDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/VerifyPANDetailsResponse" message="tns:ISBIMF_WebSiteService_VerifyPANDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestorPortfolioDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetInvestorPortfolioDetails" message="tns:ISBIMF_WebSiteService_GetInvestorPortfolioDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetInvestorPortfolioDetailsResponse" message="tns:ISBIMF_WebSiteService_GetInvestorPortfolioDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickInvestorInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/QuickInvestorInformation" message="tns:ISBIMF_WebSiteService_QuickInvestorInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/QuickInvestorInformationResponse" message="tns:ISBIMF_WebSiteService_QuickInvestorInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsiteInvestorPortfolioDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetWebsiteInvestorPortfolioDetails" message="tns:ISBIMF_WebSiteService_GetWebsiteInvestorPortfolioDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISBIMF_WebSiteService/GetWebsiteInvestorPortfolioDetailsResponse" message="tns:ISBIMF_WebSiteService_GetWebsiteInvestorPortfolioDetails_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Ws3" type="tns:ISBIMF_WebSiteService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveBranchDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SaveBranchDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByID">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetBranchByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchesByCityStateID">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetBranchesByCityStateID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBranches">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetAllBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBIMFJSONService">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBIMFJSONService_tilde">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService_tilde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SingleTableJSONService">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SingleTableJSONService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveFunds">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetAllActiveFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewOrAddlPurchase">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/NewOrAddlPurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSIPData">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetSIPData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_FeedBackForm">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/Insert_FeedBackForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioDetailsForSBIOneView">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetailsForSBIOneView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WriteToUs">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/Insert_WriteToUs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCode">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetBankCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenerateAccountFile">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/UpdateGenerateAccountFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPANDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/VerifyPANDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestorPortfolioDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetInvestorPortfolioDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickInvestorInformation">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/QuickInvestorInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsiteInvestorPortfolioDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetWebsiteInvestorPortfolioDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Ws31" type="tns:ISBIMF_WebSiteService">
+    <wsp:PolicyReference URI="#Ws31_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveBranchDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SaveBranchDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByID">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetBranchByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchesByCityStateID">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetBranchesByCityStateID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBranches">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetAllBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBIMFJSONService">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBIMFJSONService_tilde">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SBIMFJSONService_tilde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SingleTableJSONService">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/SingleTableJSONService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveFunds">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetAllActiveFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewOrAddlPurchase">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/NewOrAddlPurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSIPData">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetSIPData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_FeedBackForm">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/Insert_FeedBackForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioDetailsForSBIOneView">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetPortfolioDetailsForSBIOneView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_WriteToUs">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/Insert_WriteToUs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCode">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetBankCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenerateAccountFile">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/UpdateGenerateAccountFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPANDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/VerifyPANDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestorPortfolioDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetInvestorPortfolioDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickInvestorInformation">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/QuickInvestorInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebsiteInvestorPortfolioDetails">
+      <soap:operation soapAction="http://tempuri.org/ISBIMF_WebSiteService/GetWebsiteInvestorPortfolioDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SBIMF_WebSiteService">
+    <wsdl:port name="Ws3" binding="tns:Ws3">
+      <soap:address location="http://192.168.26.60/SBIMF_WebSiteService.svc/Wshttp" />
+    </wsdl:port>
+    <wsdl:port name="Ws31" binding="tns:Ws31">
+      <soap:address location="https://uatservices.sbimf.com/SBIMF_WebSiteService.svc/Wshttp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

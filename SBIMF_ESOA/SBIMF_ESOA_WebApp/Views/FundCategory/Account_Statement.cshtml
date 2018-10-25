@@ -1,0 +1,77 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Account Statement";
+}
+<link href="~/Content/themes/base/daterangepicker.css" rel="stylesheet" />
+<script type="text/javascript">
+    var key = @System.Convert.ToString(Session["Pass_Enc_Key"]).Trim();
+</script>
+<section class="content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 content-area-left mb-4">
+                <div class="card text-center box-shadow">
+                    <div class="welcome">Welcome</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="lblCustName">@System.Convert.ToString(Session["UserName"])</h5>
+                        <span class="separator"></span>
+                        <span class="folio-number">PAN: <label id="lblPAN">@String.Format("XXXXX")@System.Convert.ToString(Session["PAN_No"]).Substring(5, 4)@String.Format("X")</label></span>  <br />
+                        <span class="folio-number">Folio No: <label id="lblFolioNo">@System.Convert.ToString(Session["Folio_No"])</label></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 content-area-right">
+
+                <div class="select-statement-period box-shadow">
+                    <div class="calender-area">
+                        <div class="select-cal mb-3">
+                            Select Statement Period
+                        </div>
+
+                        @*<div class="form-group row">
+                                <label for="staticEmail" class="col-12 col-md-1 col-form-label pr-md-0">From</label>
+                                <div class="col-12 col-md-3 pl-md-0">
+                                    <input id="dtFrom" type="datetime" readonly="readonly" class="form-control" />
+                                </div>
+                                <label for="staticEmail" class="col-12 col-md-1 col-form-label text-left text-md-right">To</label>
+                                <div class="col-12 col-md-3 pl-md-0">
+                                    <input id="dtTo" type="datetime" readonly="readonly" class="form-control" />
+                                </div>
+                            </div>*@
+                        <div class="row m-0">
+                            <div class="col-md-7 col-lg-5 p-0">
+                                <div id="reportrange" class="form-control cal-icon">
+                                    <i class="fa fa-calendar"></i>&nbsp;
+                                    <span></span> <i class="fa fa-caret-down"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-3 text-center text-md-left mt-3 mt-md-0"><a href="#" class="btn btn-lg btn-success" id="btnGenStmtPDF"> Download PDF </a></div>
+                        </div>
+                        <span id="lblErrMsg" style="display:none; color:red;"></span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div id="SiteLoader" class="overlay-loader">
+            <div class="loader"></div>
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+    
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script src="~/Scripts/aes.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/Scripts/JS/Download_Acct_Stmt.js"></script>
+}

@@ -1,0 +1,16 @@
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\bin\Debug\GenerateAccountStatementDLL.dll
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\bin\Debug\GenerateAccountStatementDLL.pdb
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\bin\Debug\itextsharp.dll
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.csprojAssemblyReference.cache
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.csproj.CoreCompileInputs.cache
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.csproj.CopyComplete
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.dll
+D:\SBIMF_Projects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.pdb
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\bin\Debug\GenerateAccountStatementDLL.dll
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\bin\Debug\GenerateAccountStatementDLL.pdb
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\bin\Debug\itextsharp.dll
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.csproj.CoreCompileInputs.cache
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.csproj.CopyComplete
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.dll
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.pdb
+E:\SBIMFProjects\SBIMF_ESOA\GenerateAccountStatementDLL\obj\Debug\GenerateAccountStatementDLL.csprojAssemblyReference.cache

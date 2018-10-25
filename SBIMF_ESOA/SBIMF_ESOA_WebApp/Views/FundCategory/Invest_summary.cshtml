@@ -1,0 +1,137 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Investment Summary";
+}
+
+<script type="text/javascript">
+            var key = @System.Convert.ToString(Session["Pass_Enc_Key"]).Trim()
+</script>
+<link href="~/Content/themes/base/daterangepicker.css" rel="stylesheet" />
+
+<section class="content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-3 col-md-4 content-area-left mb-4">
+                <div class="card text-center box-shadow">
+                    <div class="welcome">Welcome</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="lblCustName">@System.Convert.ToString(Session["UserName"])</h5>
+                        <span class="separator"></span>
+                        <span class="folio-number">PAN: <label id="lblPAN">@String.Format("XXXXX")@System.Convert.ToString(Session["PAN_No"]).Substring(5, 4)@String.Format("X")</label></span>  <br />
+                        <span class="folio-number">Folio No: <label id="lblFolioNo">@System.Convert.ToString(Session["Folio_No"])</label></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 content-area-right">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-shadow invest-summary-chart-details-area p-4 text-center text-md-left">
+                            <h5>Overall Investment Summary</h5>
+                            <div class="invest-summary-chart-details">
+                                <div class="row align-items-center">
+                                    <div class="col-12">
+                                        <ul>
+                                            <li>Gain/Loss <span id="spanOGL" style="color:@System.Convert.ToString(Session["colorCode"])"><label id="lblOGL">@System.Convert.ToString(Session["Gain_Loss"])</label>%</span></li>
+                                            <li>Portfolio Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblOCurr">@System.Convert.ToString(Session["Tot_Portfolio_Val"])</label></span></li>
+                                            <li>Investment Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblOAmt">@System.Convert.ToString(Session["Tot_Inv_Amt"])</label></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select-statement-period box-shadow mt-4">
+                    <div class="calender-area">
+                        <div class="select-cal mb-3">
+                            Select Statement Period
+                        </div>
+                        <p style="display:none;">(The statement will be displayed from previous to current financial year e.g. <label id="lblDefaultDt"></label>)</p>
+
+                        @*<div class="form-group row">
+                                <label for="staticEmail" class="col-12 col-sm-4 col-md-1 col-form-label pr-md-0">From</label>
+                                <div class="col-12 col-md-3 col-sm-8 pl-md-0">
+                                    <input id="dtFrom" type="datetime" readonly="readonly" class="form-control" />
+                                </div>
+                                <label for="staticEmail" class="col-12 col-sm-4 col-md-1 col-form-label text-left text-md-right">To</label>
+                                <div class="col-12 col-md-3 col-sm-8 pl-md-0">
+                                    <input id="dtTo" type="datetime" readonly="readonly" class="form-control" />
+                                </div>
+                                <div class="col-12 col-md-2 px-md-0"><input id="btnGenChart" type="button" value="Submit" class="btn btn-primary" /></div>
+                            </div>*@
+                        <div class="row m-0">
+                            <div class="col-md-5 p-0">
+                                <div id="reportrange" class="form-control cal-icon">
+                                    <i class="fa fa-calendar"></i>&nbsp;
+                                    <span></span> <i class="fa fa-caret-down"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span id="lblErrMsg" style="display:none; color:red;"></span>
+                    </div>
+                </div>
+
+
+                <div class="row mt-4" id="dvFunChart">
+                    <div class="col-md-12">
+                        <div class="box-shadow">
+                            <div class="chart-area">
+                                <p class="text-center">Click on the pie chart to view further details</p>
+
+                                <div class="chart-inner-area">
+                                    <div id="canvas-holder">
+                                        <p id="no_data" style="display:none;" class="text-center msg">There is no data to display...</p>
+                                        <div id="dv_chart">
+                                            <div id="funChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="invest-summary-chart-details" style="display:none;">
+                                    <div class="row align-items-center">
+                                        <div class="col-12">
+                                            <ul>
+                                                @*<li><span>Name:</span><label id="lblCustomerName"></label></li>*@
+                                                <li>Gain/Loss <span id="spanGL"><label id="lblGL"></label>%</span></li>
+                                                <li>Portfolio Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblCurr"></label></span></li>
+                                                <li>Investment Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblAmt"></label></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="SiteLoader" class="overlay-loader">
+            <div class="loader"></div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    @*<script type="text/javascript" src="~/Scripts/JS/Charts/Loader.js"></script>
+            <script type="text/javascript" src="https://www.google.com/jsapi?autoload=
+        {'modules':[{'name':'visualization','version':'1.1','packages':
+        ['corechart']}]}"></script>*@
+    <script src="~/Scripts/aes.js"></script>
+    <script src="~/Scripts/JS/Common.js"></script>
+    <script src="~/Scripts/highcharts.js"></script>
+    <script src="~/Scripts/highcharts.src.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/JS/Charts/FundCategoryChart.js"></script>
+}
+

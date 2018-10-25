@@ -1,0 +1,39 @@
+﻿
+
+@model IEnumerable<SBIMF_ESOA_CoreEntities.SchemeEntity>
+
+@{
+    ViewBag.Title = "SchemeDetails";
+}
+
+<br />
+<h4><b>Fund Category:</b> @Model.First().CategoryName</h4>
+<br />
+<h5><b>Scheme Details</b></h5>
+<div style="float:right;">@Html.ActionLink("Back", "PieChart_FundCat", "FundCategory")</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Scheme_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scheme)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scheme_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scheme)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.OTP.DTO" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMFSERVICE.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES" />
+  <xs:complexType name="ServiceResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnMsg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResult" nillable="true" type="tns:ServiceResult" />
+  <xs:complexType name="ServiceResultOfArrayOfDistributorInitiateTransactionXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDistributorInitiateTransaction" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfDistributorInitiateTransaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfDistributorInitiateTransactionXmGPW8Z4" nillable="true" type="tns:ServiceResultOfArrayOfDistributorInitiateTransactionXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfstring" nillable="true" type="tns:ServiceResultOfstring" />
+  <xs:complexType name="ServiceResultOfCapitalGainLossXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CapitalGainLoss" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q2:CapitalGainLoss" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfCapitalGainLossXmGPW8Z4" nillable="true" type="tns:ServiceResultOfCapitalGainLossXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfDistributorInitiateTransactionXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DistributorInitiateTransaction" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q3:DistributorInitiateTransaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfDistributorInitiateTransactionXmGPW8Z4" nillable="true" type="tns:ServiceResultOfDistributorInitiateTransactionXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfDataSetymujubN2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfDataSetymujubN2" nillable="true" type="tns:ServiceResultOfDataSetymujubN2" />
+  <xs:complexType name="ServiceResultOfGenerateOTPResponseZrbDPxff">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GenerateOTPResponse" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.OTP.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.OTP.DTO" minOccurs="0" name="Data" nillable="true" type="q4:GenerateOTPResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfGenerateOTPResponseZrbDPxff" nillable="true" type="tns:ServiceResultOfGenerateOTPResponseZrbDPxff" />
+  <xs:complexType name="ServiceResultOfDataTableymujubN2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfDataTableymujubN2" nillable="true" type="tns:ServiceResultOfDataTableymujubN2" />
+  <xs:complexType name="RolloverFundDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllUnitFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrokerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EUIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FolioNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsExists" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchemeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SchemeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubBrokerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalUnits" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="investorName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolloverFundDetails" nillable="true" type="tns:RolloverFundDetails" />
+  <xs:complexType name="ServiceResultOfRolloverFundDetailsQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RolloverFundDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:RolloverFundDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfRolloverFundDetailsQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfRolloverFundDetailsQ9LSTXg_S" />
+  <xs:complexType name="ServiceResultOfSWPBeneficiaryF1eKWrN0">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SWPBeneficiary" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" minOccurs="0" name="Data" nillable="true" type="q5:SWPBeneficiary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfSWPBeneficiaryF1eKWrN0" nillable="true" type="tns:ServiceResultOfSWPBeneficiaryF1eKWrN0" />
+  <xs:complexType name="ServiceResultOfArrayOfTransactionResponseF1eKWrN0">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTransactionResponse" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" minOccurs="0" name="Data" nillable="true" type="q6:ArrayOfTransactionResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfTransactionResponseF1eKWrN0" nillable="true" type="tns:ServiceResultOfArrayOfTransactionResponseF1eKWrN0" />
+  <xs:complexType name="ServiceResultOfEMandateXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EMandate" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q7:EMandate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfEMandateXmGPW8Z4" nillable="true" type="tns:ServiceResultOfEMandateXmGPW8Z4" />
+  <xs:complexType name="InvestacLead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntgrDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSellMF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Moblie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpocName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvestacLead" nillable="true" type="tns:InvestacLead" />
+  <xs:complexType name="ServiceResultOfArrayOfInformationInvestor_DetailsNO_PzwMpB">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfInformationInvestor_Details" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common" minOccurs="0" name="Data" nillable="true" type="q8:ArrayOfInformationInvestor_Details" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfInformationInvestor_DetailsNO_PzwMpB" nillable="true" type="tns:ServiceResultOfArrayOfInformationInvestor_DetailsNO_PzwMpB" />
+  <xs:complexType name="ServiceResultOfArrayOfBankDetailQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBankDetail" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfBankDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfBankDetailQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfArrayOfBankDetailQ9LSTXg_S" />
+  <xs:complexType name="ArrayOfBankDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankDetail" nillable="true" type="tns:BankDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankDetail" nillable="true" type="tns:ArrayOfBankDetail" />
+  <xs:complexType name="BankDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankNeme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IFSC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MICR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PINCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankDetail" nillable="true" type="tns:BankDetail" />
+  <xs:complexType name="objDiscussionForum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Designation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Topic" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="objDiscussionForum" nillable="true" type="tns:objDiscussionForum" />
+  <xs:complexType name="ServiceResultOfArrayOfRTGSDetailsF1eKWrN0">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfRTGSDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" minOccurs="0" name="Data" nillable="true" type="q9:ArrayOfRTGSDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfRTGSDetailsF1eKWrN0" nillable="true" type="tns:ServiceResultOfArrayOfRTGSDetailsF1eKWrN0" />
+  <xs:complexType name="LeadData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DropOffUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvestorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeadFormDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeadGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="campaignName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="folio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fundId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="schemeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeadData" nillable="true" type="tns:LeadData" />
+  <xs:complexType name="ServiceResultOfInvestorPANDetailsQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InvestorPANDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:InvestorPANDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfInvestorPANDetailsQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfInvestorPANDetailsQ9LSTXg_S" />
+  <xs:complexType name="InvestorPANDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_ENTRYDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_HOLD_DEACTIVE_RMKS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_IPV_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_KYC_MODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_MODDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_STATUSDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_UPDT_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAMSKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CVLKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOTEXKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvestorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsKYC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KARVYKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KRAServiceProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NDMLKRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isCKY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvestorPANDetails" nillable="true" type="tns:InvestorPANDetails" />
+  <xs:complexType name="ServiceResultOfAppVersionF1eKWrN0">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AppVersion" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" minOccurs="0" name="Data" nillable="true" type="q10:AppVersion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfAppVersionF1eKWrN0" nillable="true" type="tns:ServiceResultOfAppVersionF1eKWrN0" />
+  <xs:complexType name="ServiceResultOfBrokerExistsQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="BrokerExists" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:BrokerExists" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfBrokerExistsQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfBrokerExistsQ9LSTXg_S" />
+  <xs:complexType name="BrokerExists">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrokerMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrokerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EUINMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EUINName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBrokerExists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEUINExists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrokerExists" nillable="true" type="tns:BrokerExists" />
+  <xs:complexType name="ServiceResultOfQuickPurchaseFolioDetailsDTOQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="QuickPurchaseFolioDetailsDTO" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:QuickPurchaseFolioDetailsDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfQuickPurchaseFolioDetailsDTOQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfQuickPurchaseFolioDetailsDTOQ9LSTXg_S" />
+  <xs:complexType name="QuickPurchaseFolioDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolioList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuickPurchaseFolioDetailsDTO" nillable="true" type="tns:QuickPurchaseFolioDetailsDTO" />
+  <xs:complexType name="ServiceResultOfArrayOfAppSettingsQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAppSettings" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfAppSettings" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfAppSettingsQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfArrayOfAppSettingsQ9LSTXg_S" />
+  <xs:complexType name="ArrayOfAppSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppSettings" nillable="true" type="tns:AppSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppSettings" nillable="true" type="tns:ArrayOfAppSettings" />
+  <xs:complexType name="AppSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppSettings" nillable="true" type="tns:AppSettings" />
+  <xs:complexType name="ServiceResultOfArrayOfBankSettingQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBankSetting" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfBankSetting" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfBankSettingQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfArrayOfBankSettingQ9LSTXg_S" />
+  <xs:complexType name="ArrayOfBankSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankSetting" nillable="true" type="tns:BankSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankSetting" nillable="true" type="tns:ArrayOfBankSetting" />
+  <xs:complexType name="BankSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FundCategoryIds" nillable="true" type="q11:ArrayOfint" />
+      <xs:element minOccurs="0" name="IsNri" type="xs:boolean" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LumpsumPaymentTypes" nillable="true" type="q12:ArrayOfint" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PaymentTypeIds" nillable="true" type="q13:ArrayOfint" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SIPPaymentTypes" nillable="true" type="q14:ArrayOfint" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TransactionTypeIds" nillable="true" type="q15:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankSetting" nillable="true" type="tns:BankSetting" />
+  <xs:complexType name="ServiceResultOfArrayOfTaxStatusQ9LSTXg_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTaxStatus" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfTaxStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfTaxStatusQ9LSTXg_S" nillable="true" type="tns:ServiceResultOfArrayOfTaxStatusQ9LSTXg_S" />
+  <xs:complexType name="ArrayOfTaxStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxStatus" nillable="true" type="tns:TaxStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaxStatus" nillable="true" type="tns:ArrayOfTaxStatus" />
+  <xs:complexType name="TaxStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaxStatus" nillable="true" type="tns:TaxStatus" />
+  <xs:complexType name="ServiceResultOfAadharVerificationF1eKWrN0">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AadharVerification" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" minOccurs="0" name="Data" nillable="true" type="q16:AadharVerification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfAadharVerificationF1eKWrN0" nillable="true" type="tns:ServiceResultOfAadharVerificationF1eKWrN0" />
+  <xs:complexType name="ServiceResultOfPostEmandateResponseF1eKWrN0">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PostEmandateResponse" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Classes" minOccurs="0" name="Data" nillable="true" type="q17:PostEmandateResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfPostEmandateResponseF1eKWrN0" nillable="true" type="tns:ServiceResultOfPostEmandateResponseF1eKWrN0" />
+  <xs:simpleType name="ProjectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Website">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Distributor">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Institutional">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mobile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProjectType" nillable="true" type="tns:ProjectType" />
+  <xs:complexType name="ArrayOfPushNotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PushNotificationDTO" nillable="true" type="tns:PushNotificationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPushNotificationDTO" nillable="true" type="tns:ArrayOfPushNotificationDTO" />
+  <xs:complexType name="PushNotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Template" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PushNotificationDTO" nillable="true" type="tns:PushNotificationDTO" />
+  <xs:simpleType name="PushNotificationMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SingleTemplate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MultipleTemplate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PushNotificationMode" nillable="true" type="tns:PushNotificationMode" />
+  <xs:complexType name="ServiceResultOfArrayOfCartPaymentDetailsGZyQRAEH">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCartPaymentDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES" minOccurs="0" name="Data" nillable="true" type="q18:ArrayOfCartPaymentDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfCartPaymentDetailsGZyQRAEH" nillable="true" type="tns:ServiceResultOfArrayOfCartPaymentDetailsGZyQRAEH" />
+  <xs:complexType name="ArrayOfServiceResultOfFatcaPostedToCamsResultXmGPW8Z4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceResultOfFatcaPostedToCamsResultXmGPW8Z4" nillable="true" type="tns:ServiceResultOfFatcaPostedToCamsResultXmGPW8Z4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceResultOfFatcaPostedToCamsResultXmGPW8Z4" nillable="true" type="tns:ArrayOfServiceResultOfFatcaPostedToCamsResultXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfFatcaPostedToCamsResultXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="FatcaPostedToCamsResult" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q19:FatcaPostedToCamsResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfFatcaPostedToCamsResultXmGPW8Z4" nillable="true" type="tns:ServiceResultOfFatcaPostedToCamsResultXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfVerifyNFTOnlineRequestResultXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="VerifyNFTOnlineRequestResult" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q20:VerifyNFTOnlineRequestResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfVerifyNFTOnlineRequestResultXmGPW8Z4" nillable="true" type="tns:ServiceResultOfVerifyNFTOnlineRequestResultXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfNFTOnlineRequestResultXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NFTOnlineRequestResult" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q21:NFTOnlineRequestResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfNFTOnlineRequestResultXmGPW8Z4" nillable="true" type="tns:ServiceResultOfNFTOnlineRequestResultXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfInvestorDetailsXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InvestorDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q22:InvestorDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfInvestorDetailsXmGPW8Z4" nillable="true" type="tns:ServiceResultOfInvestorDetailsXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfint" nillable="true" type="tns:ServiceResultOfint" />
+  <xs:complexType name="ServiceResultOfMarketCommentaryXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="MarketCommentary" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q23:MarketCommentary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfMarketCommentaryXmGPW8Z4" nillable="true" type="tns:ServiceResultOfMarketCommentaryXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfArrayOfMarketCommentaryXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfMarketCommentary" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q24:ArrayOfMarketCommentary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfArrayOfMarketCommentaryXmGPW8Z4" nillable="true" type="tns:ServiceResultOfArrayOfMarketCommentaryXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfInvoiceUtilityResultXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InvoiceUtilityResult" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q25:InvoiceUtilityResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfInvoiceUtilityResultXmGPW8Z4" nillable="true" type="tns:ServiceResultOfInvoiceUtilityResultXmGPW8Z4" />
+  <xs:complexType name="ServiceResultOfIUPaymentDetailsXmGPW8Z4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IUPaymentDetails" Namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="Data" nillable="true" type="q26:IUPaymentDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResultOfIUPaymentDetailsXmGPW8Z4" nillable="true" type="tns:ServiceResultOfIUPaymentDetailsXmGPW8Z4" />
+</xs:schema>

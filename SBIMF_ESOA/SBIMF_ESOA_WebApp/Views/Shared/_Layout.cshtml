@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />*@
+    <link rel="stylesheet" type="text/css" href="~/Content/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+    <script src="~/Scripts/JS/Common.js"></script>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            LoginUrl = "@Url.Action("AuthenticateUser", "Login").ToString().ToLower()"
+            HomeUrl = "@Url.Action("Index", "Home").ToString().ToLower()"
+            Getkey_Url = "@Url.Action("GetRandomKey", "Login").ToString().ToLower()"
+            FundChartUrl = "@Url.Action("GetChart", "FundCategory").ToString().ToLower()"
+            GetSchemeChartUrl = "@Url.Action("GetSchemeChart", "Scheme").ToString().ToLower()"
+            SchemeChartUrl = "@Url.Action("SchemeChart", "Scheme").ToString().ToLower()"
+            SchemeChartDataUrl = "@Url.Action("SchemeChartData", "Scheme").ToString().ToLower()"
+            GetSchemeD_ChartUrl = "@Url.Action("GetSchemeD_Chart", "Scheme").ToString().ToLower()"
+            DisplaySchemeD_ChartUrl = "@Url.Action("DisplaySchemeD_Chart", "Scheme").ToString().ToLower()"
+            DisplaySchemeD_Chart_DataUrl = "@Url.Action("DisplaySchemeD_Chart_Data", "Scheme").ToString().ToLower()"
+            GetAcctStmtDetailsUrl = "@Url.Action("GetAcctStmtDetails", "FundCategory").ToString().ToLower()"
+            GenerateAcctStmtPdfUrl = "@Url.Action("GenerateAcctStmtPdf", "FundCategory").ToString().ToLower()"
+            DownloadStmtUrl = "@Url.Action("DownloadStmt", "FundCategory").ToString().ToLower()"
+            VerifyPanUrl = "@Url.Action("VerifyPAN", "Calculator").ToString().ToLower()"
+            EncryptEncodeUrl = "@Url.Action("EncryptEncode", "Calculator").ToString().ToLower()"
+            SBIMFJSONServiceUrl = "@Url.Action("SBIMFJSONService", "Calculator").ToString().ToLower()"
+            webAbsoluteUrl = "https://uatweb.sbimf.com/en-us";
+            var forgeryId = "";
+        });
+        
+    </script>
+</head>
+<body>
+    
+    <header>
+        <div class="logo-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <button class="navbar-toggler nav-icon3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            @*<span class="navbar-toggler-icon"></span>*@
+                            <div id="nav-icon3">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                        @if (ViewContext.RouteData.Values["Action"].ToString().ToLower() == "index")
+                        {<img src="../ESOA/images/logo.png" alt="" class="img-fluid"> }
+                        else
+                        { <img src="../images/logo.png" alt="" class="img-fluid">}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 p-0 p-sm-0">
+                        <nav class="navbar navbar-expand-md navbar-light bg-light">
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav w-100 justify-content-between">
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "index" ? "active" : "")"><a class="nav-item nav-link d-flex align-items-center" href="@Url.Action("Index", "Home")">Home</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "invest_summary" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "schemechart" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "displayschemed_chart" ? "active" : "")"><a class="nav-item nav-link d-flex align-items-center" href="@Url.Action("Invest_summary", "FundCategory")">Investment Summary</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "account_statement" ? "active" : "")"><a class="nav-item nav-link d-flex align-items-center" href="@Url.Action("Account_Statement", "FundCategory")">Account Statement</a></li>
+                                    <li class="@(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "familysolution" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "returnvaluecalculator" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "sipcalculator" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "swpcalculator" ? "active" : "")"><a class="nav-item nav-link d-flex align-items-center" href="@Url.Action("FamilySolution", "Calculator")">Investment Tools & Calculator</a></li>
+                                    @*<li><a class="nav-item nav-link d-flex align-items-center" href="#">Next Best  Product  & Recommendations</a></li>*@
+                                    @*<li><a class="nav-item nav-link d-flex align-items-center" href="#">Terms and Conditions</a></li>*@
+                                    <li><a class="nav-item nav-link d-flex align-items-center" href="@Url.Action("Logout", "Home")">Logout</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="forgeryToken" value="@GetAntiForgeryToken()" />
+        
+    </header>
+    @if (ViewContext.RouteData.Values["Action"].ToString().ToLower() == "familysolution" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "returnvaluecalculator" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "sipcalculator" || ViewContext.RouteData.Values["Action"].ToString().ToLower() == "swpcalculator")
+    {
+        <section class="tab-upper-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 text-left text-sm-center">
+                        <h3>Where can I get some?</h3>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <ul class="nav nav-tabs d-flex justify-content-between" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "familysolution" ? "active" : "")" id="home-tab" href="@Url.Action("FamilySolution", "Calculator")" role="tab" aria-controls="home" aria-selected="true">Family Solution</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "returnvaluecalculator" ? "active" : "")" id="profile-tab" href="@Url.Action("ReturnValueCalculator", "Calculator")" role="tab" aria-controls="profile" aria-selected="false">Returns Value Calculator</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "sipcalculator" ? "active" : "")" id="contact-tab" href="@Url.Action("SIPCalculator", "Calculator")" role="tab" aria-controls="contact" aria-selected="false">Systematic Investment Planner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString().ToLower() == "swpcalculator" ? "active" : "")" id="SWP-calc" href="@Url.Action("SWPCalculator", "Calculator")" role="tab" aria-controls="contact" aria-selected="false">SWP Calculator</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    
+
+    @RenderBody()
+    <footer class="site-footer">
+        <div class="container inner">
+            <h5 class="ftr-text"> Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</h5>
+        </div>
+    </footer>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('#nav-icon3').click(function () {
+                $(this).toggleClass('open');
+            });
+        });
+
+        
+         @functions{
+             public string GetAntiForgeryToken()
+             {
+                 string cookieToken, formToken;
+                 AntiForgery.GetTokens(null, out cookieToken, out formToken);
+                 return cookieToken + "," + formToken;  
+             }
+         }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.26.60/SBIMF_WebSiteService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" />
+  <xs:element name="SaveBranchDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="branch" nillable="true" type="q1:Branch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBranchDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveBranchDetailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="branchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetBranchByIDResult" nillable="true" type="q2:Branch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchesByCityStateID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stateID" type="xs:int" />
+        <xs:element minOccurs="0" name="cityID" type="xs:int" />
+        <xs:element minOccurs="0" name="countryID" type="xs:int" />
+        <xs:element minOccurs="0" name="branchType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchesByCityStateIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetBranchesByCityStateIDResult" nillable="true" type="q3:ArrayOfBranch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBranches">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBranchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetAllBranchesResult" nillable="true" type="q4:ArrayOfBranch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SBIMFJSONService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SBIMFJSONServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SBIMFJSONServiceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SBIMFJSONService_tilde">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SBIMFJSONService_tildeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SBIMFJSONService_tildeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SingleTableJSONService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SingleTableJSONServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SingleTableJSONServiceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolioDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" minOccurs="0" name="projectType" type="q8:ProjectType" />
+        <xs:element minOccurs="0" name="tokenId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolioDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetPortfolioDetailsResult" nillable="true" type="q9:InvestorPortfolio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveFunds">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActiveFundsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetAllActiveFundsResult" nillable="true" type="q10:ArrayOfFundMaster" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewOrAddlPurchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FolioNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TransactionTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Scheme" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Reinvest" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Instrm_No" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Instrm_Date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Instrm_Bank" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Broker_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Sub_Broker_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Bank_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BankCity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AccNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AccType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RedeemPayOut" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DividendPayout" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ECSNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EUIN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Amc_Ref_No" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Entry_Date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Sub_Brok_ARN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Demat_AC_Number" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MobileNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isschedule" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewOrAddlPurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewOrAddlPurchaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSIPData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="schemeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="investedAmount" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSIPDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSIPDataResult" nillable="true" type="q11:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_FeedBackForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q12:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_FeedBackFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_FeedBackFormResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolioDetailsForSBIOneView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="folioNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pan" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPortfolioDetailsForSBIOneViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetPortfolioDetailsForSBIOneViewResult" nillable="true" type="q13:InvestorPortfolio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WriteToUs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" minOccurs="0" name="folioDetails" nillable="true" type="q14:FolioDetailCaseCreation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WriteToUsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" minOccurs="0" name="Insert_WriteToUsResult" nillable="true" type="q15:ServiceResponseObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBankCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGenerateAccountFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReturnCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReturnMsg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGenerateAccountFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateGenerateAccountFileResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyPANDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyPANDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" minOccurs="0" name="VerifyPANDetailsResult" nillable="true" type="q16:ServiceResponseForWebsiteOfInvestorPANDetailsQ9LSTXg_S" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvestorPortfolioDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" minOccurs="0" name="projectType" type="q17:ProjectType" />
+        <xs:element minOccurs="0" name="additionalinfo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tokenId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvestorPortfolioDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetInvestorPortfolioDetailsResult" nillable="true" type="q18:InvestorPortfolio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuickInvestorInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FolioNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuickInvestorInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="QuickInvestorInformationResult" nillable="true" type="q19:WebInvestorInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWebsiteInvestorPortfolioDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.Common.DTO" minOccurs="0" name="projectType" type="q20:ProjectType" />
+        <xs:element minOccurs="0" name="additionalinfo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tokenId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWebsiteInvestorPortfolioDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SBIMF_SERVICES.DataContract" minOccurs="0" name="GetWebsiteInvestorPortfolioDetailsResult" nillable="true" type="q21:WebInvestorInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

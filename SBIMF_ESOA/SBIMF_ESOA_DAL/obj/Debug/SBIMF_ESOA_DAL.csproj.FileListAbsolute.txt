@@ -1,0 +1,12 @@
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\SBIMF_ESOA_DAL.dll.config
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\SBIMF_ESOA_DAL.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\SBIMF_ESOA_DAL.pdb
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\System.ValueTuple.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\System.Web.Razor.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\System.ValueTuple.xml
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\bin\Debug\System.Web.Razor.xml
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\obj\Debug\SBIMF_ESOA_DAL.csproj.CoreCompileInputs.cache
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\obj\Debug\SBIMF_ESOA_DAL.csproj.CopyComplete
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\obj\Debug\SBIMF_ESOA_DAL.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\obj\Debug\SBIMF_ESOA_DAL.pdb
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_DAL\obj\Debug\SBIMF_ESOA_DAL.csprojAssemblyReference.cache

@@ -1,0 +1,295 @@
+﻿
+@{
+    ViewBag.Title = "SWPCalculator";
+}
+<script type="text/javascript">
+            var key = @System.Convert.ToString(Session["Pass_Enc_Key"]).Trim()
+</script>
+<link href="~/Content/themes/base/datepicker.css" rel="stylesheet" />
+<section class="tab-bottom-area mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9">
+                <div class="row">
+                    <div class="col-md-12 tab-area">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="SWP" role="tabpanel" aria-labelledby="SWP-calc">
+                                <div class="family-solution-content box-shadow p-4 mt-5">
+                                    <div class="more">
+                                        <h4>What is Systematic Withdrawal Plan (SWP)?</h4>
+                                        Systematic Withdrawal Plan (SWP) is a facility offered by mutual funds through which an investor can withdraw a pre-determined amount at pre-decided intervals from his/ her investments in select mutual fund schemes. SWP in mutual fund helps in creating a regular source of income to retirees or supplementary income for those with specific needs – like meeting child’s education, regular cash flows to elderly parents etc.
+                                        <br /><br />
+                                        <h4>How does SWP work?</h4>
+                                        SWP (Systematic Withdrawal Plan) – works in an opposite way to SIP (Systematic Investment Plan). In this case, instead of you saving or investing a fixed sum on money at regular (may be monthly or so) intervals, you as an investor can withdraw a fixed sum of money from your investments on regular (monthly or so) basis.<br /><br />
+                                        <h4>How can u opt for SWP in Mutual Funds?</h4>
+                                        In order to start a Mutual Fund SWP with SBI Mutual Fund, you need to invest in one of SBI Mutual Fund open-ended scheme. Post investment, you as an investor can start availing the SWP facility as per your requirement. By taking the mutual fund route for regular cash flows through SWP, you get the benefit of Timely Cash Flows along with possible Capital Appreciation on the residual investment.
+
+                                        <div class="row mt-4">
+                                            <div class="col-md-2 text-center text-md-left mb-3 mb-md-0">
+                                                <img src="~/images/rupee-cost-average.png" alt="" class="img-fluid mt-4">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="h4">Rupee-Cost Averaging</div>
+                                                Instead of trying to time the market, by investing on a regular basis, the investor benefits from the rupee-cost averaging factor. As the investments are done over different market cycles, the investor benefits from the market volatility by getting to buy more units of the same fund when the markets are low and buying lesser when the prices are higher.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="separator"></div>
+                                    <div class="row calculator-area">
+                                        <div class="col-sm-12">
+                                            <p>Systematic Withdrawal Plan allows you to withdraw a certain amount of money at a regular interval from your lump sum investment. Use the calculator below to know how much you would have gained if you had started your SWP a couple of years ago.</p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="internal-fields">
+                                                        <label>Select a Scheme</label>
+                                                        @*<div class="custom-drop">
+                                                                <select name="expectedReturn" class="form-control">
+                                                                    <option value="6%">5%</option>
+                                                                    <option value="6%">6%</option>
+                                                                    <option value="7%">7%</option>
+                                                                    <option value="8%">8%</option>
+                                                                    <option value="9%">9%</option>
+                                                                    <option value="10%">10%</option>
+                                                                    <option value="11%">11%</option>
+                                                                    <option value="11%" selected="">12%</option>
+                                                                    <option value="11%">13%</option>
+                                                                    <option value="11%">14%</option>
+                                                                    <option value="11%">15%</option>
+                                                                    <option value="11%">16%</option>
+                                                                    <option value="11%">17%</option>
+                                                                    <option value="11%">18%</option>
+                                                                    <option value="11%">19%</option>
+                                                                    <option value="11%">20%</option>
+                                                                    <option value="11%">21%</option>
+                                                                    <option value="11%">22%</option>
+                                                                </select>
+                                                            </div>*@
+                                                        <div class="custom-drop">
+                                                            @Html.DropDownList("ddlScheme", ViewBag.SWPSchemes as SelectList, "--Select--", new { @Id = "ddlScheme", @class = "form-control" })
+                                                            <span id="lblSchemeError" style="color:red; display:none;"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3 mb-md-0">
+                                                    <div class="internal-fields">
+                                                        <label>Initial Investment Amount</label>
+                                                        <input id="txtInitialInvAmount" type="text" placeholder="Enter Initial Investment Amount" class="form-control" />
+                                                        <span id="lblInvAmtError" style="color:red; display:none;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="internal-fields">
+                                                        <label>Investment Date</label>
+                                                        <input id="txtInvDate" type="datetime" readonly="readonly" placeholder="Enter Investment Date" class="form-control cal-icon" />
+                                                        <label ID="lblInvEndDate"></label>
+                                                        <span ID="lblErrorInvDate" style="color:red; display:none;"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3 mb-md-0">
+                                                    <div class="internal-fields">
+                                                        <label>SWP Amount</label>
+                                                        <input id="txtSWPAmount" type="text" placeholder="Enter SWP Amount" class="form-control" />
+                                                        <span id="lblSWPAmount" style="color:red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="internal-fields">
+                                                        <label>SWP Frequency</label>
+                                                        <div class="custom-drop">
+                                                            <select name="ddlFrequency" id="ddlFrequency" class="form-control">
+                                                                <option value="Monthly">Monthly</option>
+                                                                <option value="Quarterly">Quarterly</option>
+                                                            </select>
+                                                        </div>
+                                                        <span id="lblErrorFrequency" style="color:red; display:none;"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="internal-fields">
+                                                        <label>SWP Start Date</label>
+                                                        <div class="row">
+                                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                                <div class="custom-drop">
+                                                                    <select name="ddlSWPStartDay" id="ddlSWPStartDay" class="form-control">
+                                                                        <option value="0">01</option>
+                                                                        <option value="1">05</option>
+                                                                        <option value="2">10</option>
+                                                                        <option value="3">15</option>
+                                                                        <option value="4">20</option>
+                                                                        <option value="5">25</option>
+                                                                        <option value="6">30</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                                <div class="custom-drop">
+                                                                    <select name="ddlSWPStartMonth" id="ddlSWPStartMonth" class="form-control">
+                                                                        <option value="0">Jan</option>
+                                                                        <option value="1">Feb</option>
+                                                                        <option value="2">Mar</option>
+                                                                        <option value="3">Apr</option>
+                                                                        <option value="4">May</option>
+                                                                        <option value="5">Jun</option>
+                                                                        <option value="6">Jul</option>
+                                                                        <option value="7">Aug</option>
+                                                                        <option value="8">Sep</option>
+                                                                        <option value="9">Oct</option>
+                                                                        <option value="10">Nov</option>
+                                                                        <option value="11">Dec</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                                <div class="custom-drop">
+                                                                    <select name="ddlSWPStartYear" id="ddlSWPStartYear" class="form-control"></select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <span id="lblSWPStartDate" style="color:red;  display:none;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="internal-fields">
+                                                        <label>SWP End Date</label>
+                                                        <div class="row">
+                                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                                <div class="custom-drop">
+                                                                    <select name="ddlSWPEndDay" id="ddlSWPEndDay" class="form-control">
+                                                                        <option value="0">01</option>
+                                                                        <option value="1">05</option>
+                                                                        <option value="2">10</option>
+                                                                        <option value="3">15</option>
+                                                                        <option value="4">20</option>
+                                                                        <option value="5">25</option>
+                                                                        <option value="6">30</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                                <div class="custom-drop">
+                                                                    <select name="ddlSWPEndMonth" id="ddlSWPEndMonth" class="form-control">
+                                                                        <option value="0">Jan</option>
+                                                                        <option value="1">Feb</option>
+                                                                        <option value="2">Mar</option>
+                                                                        <option value="3">Apr</option>
+                                                                        <option value="4">May</option>
+                                                                        <option value="5">Jun</option>
+                                                                        <option value="6">Jul</option>
+                                                                        <option value="7">Aug</option>
+                                                                        <option value="8">Sep</option>
+                                                                        <option value="9">Oct</option>
+                                                                        <option value="10">Nov</option>
+                                                                        <option value="11">Dec</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                                <div class="custom-drop">
+                                                                    <select name="ddlSWPEndYear" id="ddlSWPEndYear" class="form-control"></select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <span id="lblSWPEndDate" style="color:red;  display:none;"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-sm-6 mt-4">
+                                                    <button type="button" id="btnCalcualte" class="btn btn-lg btn-success mr-3 mb-3 mb-md-0">Calculate</button>
+                                                    <a class="btn btn-lg btn-primary redirectPurchase" target="_blank" href="https://www.sbimf.com/en-us/quick-invest">Invest Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result-area mt-5">
+                                    <div class="row">
+                                        <div class="col-md-12" id='archive'>
+                                            <div class="box-shadow table-responsive" id='appendSummary'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result-area mt-5">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="table-container-our" style="display: none">
+                                                <div class="box-shadow table-responsive" id='appendBreakage'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*<section class="summary-result-area">
+                                        <div class="container">
+                                            <div class="row" id='archive'>
+                                                <div class="col-md-12" id='appendSummary'></div>
+                                            </div>
+                                        </div>
+                                        <div id="table-container-our" class="container" style="display: none">
+                                            <div class="row">
+                                                <div class="panel panel-default">
+                                                    <div>
+                                                        <h3 class="detailsResult">Detail Result</h3>
+                                                    </div>
+                                                    <div class="col-md-12" id='appendBreakage'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>*@
+
+                                @*<div class="result-area mt-5">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="box-shadow">
+                                                    <span>Detail Result</span>
+                                                    <table width="100%" class="swp-table">
+                                                        <tr>
+                                                            <th>Detail Result</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <div class="col-md-12" id='appendBreakage'></div>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<div id="SiteLoader" class="overlay-loader">
+        <div class="loader"></div>
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script src="~/Scripts/aes.js"></script>
+    <script src="~/Scripts/JS/Common.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Slider.js"></script>
+    <script type="text/javascript" src="~/Scripts/JS/Calc/SWPCalc.js"></script>
+
+}
+
+

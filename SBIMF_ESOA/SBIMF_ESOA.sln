@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBIMF_ESOA_DAL", "SBIMF_ESOA_DAL\SBIMF_ESOA_DAL.csproj", "{BE04B578-1483-4A98-8362-69B0EA16807D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FF0FF7F-1275-4E3C-BF2F-70D606173539} = {1FF0FF7F-1275-4E3C-BF2F-70D606173539}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBIMF_ESOA_BAL", "SBIMF_ESOA_BAL\SBIMF_ESOA_BAL.csproj", "{8BE07398-F1A2-4B5F-B2BB-5A2097ADBD75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBIMF_ESOA_WebApp", "SBIMF_ESOA_WebApp\SBIMF_ESOA_WebApp.csproj", "{9B440469-1655-4BC4-86CF-D55CDF22DAE9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BE04B578-1483-4A98-8362-69B0EA16807D} = {BE04B578-1483-4A98-8362-69B0EA16807D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBIMF_ESOA_CoreEntities", "SBIMF_ESOA_CoreEntities\SBIMF_ESOA_CoreEntities.csproj", "{1FF0FF7F-1275-4E3C-BF2F-70D606173539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateAccountStatementDLL", "GenerateAccountStatementDLL\GenerateAccountStatementDLL.csproj", "{5EAF02AA-8BDA-4482-BE73-800F49B1D891}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE04B578-1483-4A98-8362-69B0EA16807D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE04B578-1483-4A98-8362-69B0EA16807D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE04B578-1483-4A98-8362-69B0EA16807D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE04B578-1483-4A98-8362-69B0EA16807D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BE07398-F1A2-4B5F-B2BB-5A2097ADBD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE07398-F1A2-4B5F-B2BB-5A2097ADBD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE07398-F1A2-4B5F-B2BB-5A2097ADBD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE07398-F1A2-4B5F-B2BB-5A2097ADBD75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B440469-1655-4BC4-86CF-D55CDF22DAE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B440469-1655-4BC4-86CF-D55CDF22DAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B440469-1655-4BC4-86CF-D55CDF22DAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B440469-1655-4BC4-86CF-D55CDF22DAE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF0FF7F-1275-4E3C-BF2F-70D606173539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF0FF7F-1275-4E3C-BF2F-70D606173539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF0FF7F-1275-4E3C-BF2F-70D606173539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF0FF7F-1275-4E3C-BF2F-70D606173539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EAF02AA-8BDA-4482-BE73-800F49B1D891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EAF02AA-8BDA-4482-BE73-800F49B1D891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EAF02AA-8BDA-4482-BE73-800F49B1D891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EAF02AA-8BDA-4482-BE73-800F49B1D891}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7A9861D-F800-44B9-84AB-D78AB18044AB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://172.24.10.96:8080/tfs/vendor-projects
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SBIMF_ESOA_DAL\\SBIMF_ESOA_DAL.csproj
+		SccProjectName1 = SBIMF_ESOA_DAL
+		SccLocalPath1 = SBIMF_ESOA_DAL
+		SccProjectUniqueName2 = SBIMF_ESOA_BAL\\SBIMF_ESOA_BAL.csproj
+		SccProjectName2 = SBIMF_ESOA_BAL
+		SccLocalPath2 = SBIMF_ESOA_BAL
+		SccProjectUniqueName3 = SBIMF_ESOA_WebApp\\SBIMF_ESOA_WebApp.csproj
+		SccProjectName3 = SBIMF_ESOA_WebApp
+		SccLocalPath3 = SBIMF_ESOA_WebApp
+		SccProjectUniqueName4 = SBIMF_ESOA_CoreEntities\\SBIMF_ESOA_CoreEntities.csproj
+		SccProjectName4 = SBIMF_ESOA_CoreEntities
+		SccLocalPath4 = SBIMF_ESOA_CoreEntities
+		SccProjectUniqueName5 = GenerateAccountStatementDLL\\GenerateAccountStatementDLL.csproj
+		SccProjectName5 = GenerateAccountStatementDLL
+		SccLocalPath5 = GenerateAccountStatementDLL
+	EndGlobalSection
+EndGlobal

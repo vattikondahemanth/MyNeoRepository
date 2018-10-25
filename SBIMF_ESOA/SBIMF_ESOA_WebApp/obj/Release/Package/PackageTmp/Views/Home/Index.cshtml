@@ -1,0 +1,146 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .ui-tooltip.ui-corner-all.ui-widget-shadow.ui-widget.ui-widget-content { opacity:1;}
+</style>
+
+<section class="content-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+                <div class="box-shadow banner-img">
+                    <p>Welcome to SBI Mutual Fund <br /> <span>Smart</span> Statement</p>
+                </div>
+                <div class="box-shadow home-content mt-4">
+                    <p class="first-line">Dear @Session["UserName"].ToString()</p> @*@Session["UserName"].ToString()*@
+                    <div class="welcome-msg-home">Welcome to your SBI MF Smart Statement!</div>
+                    <p>We hope you enjoy the new statement format and further discipline your investments with us.</p>
+                    <p>We value your association and are always available to assist you.</p>
+                    <p>Warm Regards, <span>SBI Mutual Fund</span></p>
+                    @*<a href="@Url.Action("Invest_summary","FundCategory")" class="btn btn-secondary">View your smart statement</a>*@
+                    @*<span class="terms-cond">*T & C apply.</span>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-12 col-sm-6 prod-box d-flex">
+                        <div class="media box-shadow">
+                            <div class="align-self-center text-center p-3 col-4 col-sm-3">
+                                <img class="" src="~/Content/images/investap-icon.png" alt="">
+                                <span class="d-block">invesTap</span>
+                            </div>
+
+                            <div class="media-body p-3 col-8 col-sm-9">
+                                <p>Invest anytime, anywhere in 3 simple steps via our invesTap.</p>
+                                <a href="https://bnc.lt/COLk/kIP74J0hbM" target="_blank" class="btn btn-primary btn-sm">Download Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 prod-box mt-4 mt-sm-0 d-flex">
+                        <div class="media box-shadow">
+                            <div class="align-self-center text-center p-3 col-4 col-sm-3">
+                                <img class="" src="~/Content/images/inspire-icon.png" alt="">
+                                <span class="d-block">Inspire</span>
+                            </div>
+
+                            <div class="media-body p-3 col-8 col-sm-9">
+                                <p>Get the best investment insights from our experts exclusively on our blog</p>
+                                <a href="https://inspire.sbimf.com/?subscribe=true&mail=@Session["Email"].ToString()" target="_blank" class="btn btn-primary btn-sm">Subscribe Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colcol-12 col-sm-6 prod-box mt-4 d-flex">
+                        <div class="media box-shadow">
+                            <div class="align-self-center text-center p-3 col-4 col-sm-3">
+                                <img class="" src="~/Content/images/share-icon.png" alt="">
+                                <span class="d-block">Share with a Friend</span>
+                            </div>
+
+                            <div class="media-body p-3 col-8 col-sm-9">
+                                <p>Don't forget to refer your family and friends on smart investment decisions.</p>
+                                <a href="mailto:?subject=I just made a smart investment decision, now it’s your turn&body=Dear [Insert name(s) here] %0D%0A I just made this great investment with SBI Mutual funds (https://www.sbimf.com/en-us) You also might benefit from one of the many schemes that they offer. It’s simple and can be done online in few easy steps. Start your investment now! (https://www.sbimf.com/en-us/investment-solutions)" class="btn btn-primary btn-sm">Refer Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 prod-box mt-4 d-flex">
+                        <div class="media box-shadow">
+                            <div class="align-self-center text-center p-3 col-4 col-sm-3">
+                                <img class="" src="~/Content/images/yuva-icon.png" alt="">
+                                <span class="d-block">Yuva</span>
+                            </div>
+
+                            <div class="media-body p-3 col-8 col-sm-9">
+                                <p>
+                                    For any basic investment queries,
+                                    talk to our Chatbot YUVA on ourwebsite.
+                                </p>
+                                <a href="https://www.sbimf.com/en-us" target="_blank" class="btn btn-primary btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-shadow p-2 p-sm-4 mt-4 mb-5">
+                    <div class="row social-icons-area">
+                        <div class="col-sm-9 d-flex align-items-center">
+                            <p class="mb-0 mr-2">Stay connected with us</p>
+                            <ul>
+                                <li><a href="https://www.facebook.com/SBIMF" target="_blank"><img src="~/Content/images/fb-icon.png" alt=""></a></li>
+                                <li><a href="https://www.instagram.com/sbimutualfund/?hl=en" target="_blank"><img src="~/Content/images/insta-icon.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/SBIMF" target="_blank"><img src="~/Content/images/twitter-icon.png" alt=""></a></li>
+                                @*<li><img src="~/Content/images/google-plus-icon.png" alt=""></li>*@
+                                <li><a href="#" id="aPhone" data-toggle="tooltip" title="Call 18002093333!"><img src="~/Content/images/contact-icon.png" alt="" /></a></li>
+                                @*<li><img src="~/Content/images/email-icon.png" alt=""></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var isMobile = false; //initiate as false
+            // device detection
+            if ($(window).width() < 900) {
+                isMobile = true;
+                $("#aPhone").attr("href", "tel:18002093333");
+            }
+
+            $('#aPhone').tooltip();
+
+            //$("#aPhone").hover(
+            //    function () {
+            //        if (isMobile == false) {
+            //            var title = $(this).attr("data-title");
+            //            $('<div/>', {
+            //                text: title,
+            //                class: 'box'
+            //            }).appendTo(this);
+            //        }
+            //    }, function () {
+            //        $(document).find("div.box").remove();
+            //    }
+            //);.ui-tooltip.ui-corner-all.ui-widget-shadow.ui-widget.ui-widget-content
+        });
+
+    </script>
+
+}
+
+
+

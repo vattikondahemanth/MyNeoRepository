@@ -1,0 +1,191 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "SIPCalculator";
+}
+<section class="tab-bottom-area mb-5 calculatorContainer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-md-12 tab-area">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="SIP-calc" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="family-solution-content box-shadow p-3 p-md-4 mt-5">
+                                    <div class="more">
+                                        <h4>What is Systematic Investment Plan (SIP)?</h4>
+                                        SIP (Systematic Investment Plan) - is one of the most disciplined approach to investments in mutual funds.It lets you set aside a fixed sum of money at regular intervals (weekly, monthly, and quarterly) with an objective to generate capital appreciation in the longer run.
+                                        <br /><br />
+                                        <h4>Why should you invest in SIP?</h4>
+                                        Other than being a disciplined approach to investments, SIP investment also has its own advantages. Two of which are – Rupee-Cost Averaging and Power of Compounding.
+
+                                        <div class="row mt-4">
+                                            <div class="col-md-2 text-center mb-3 mb-sm-0">
+                                                <img src="~/images/rupee-cost-average.png" alt="" class="img-fluid mt-4">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="h4">Rupee-Cost Averaging</div>
+                                                Instead of trying to time the market, by investing on a regular basis, the investor benefits from the rupee-cost averaging factor. As the investments are done over different market cycles, the investor benefits from the market volatility by getting to buy more units of the same fund when the markets are low and buying lesser when the prices are higher.
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-md-2 text-center mb-3 mb-sm-0">
+                                                <img src="~/images/rupee-component-icon.png" alt="" class="img-fluid mt-4">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="h4">Power of compounding</div>
+                                                Compound interest is said to be the eighth wonder of the world by noted scientist Albert Einstein. The rule of compounding is simple, the earlier you start the more you benefit. Meaning for every single rupee that you invest, it is deployed to earn return. This in turn is also possibly poised to earn more returns in future. A regular SIP mutual fund compounds your money and helps create wealth.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="separator"></div>
+                                    <div class="row calculator-area">
+                                        <div class="col-sm-12">
+                                            <p>Get a plan to invest a fixed amount every month and achieve your desired savings.</p>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="internal-fields">
+                                                        <label>Tenure in which you would like to achieve your goal?</label>
+                                                        <div class="slider-box rel slider-wid marB30">
+                                                            <div class="slider" id="sliderYears">
+                                                            </div>
+                                                            <span class="slider-min sliderYearsMin">1 Yr</span>
+                                                            <span class="slider-max sliderYearsMax">30 Yrs</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="internal-fields">
+                                                        <label>Drag to select the sum you would like to target?</label>
+                                                        <div class="slider-box rel slider-wid marB30">
+                                                            <div class="slider" id="sliderAmount">
+                                                            </div>
+                                                            <span class="slider-min sliderAmountMin">10K</span>
+                                                            <span class="slider-max sliderAmountMax">99Cr</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="separator2"></div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>Expected Rate of Return</label>
+                                                    <div class="custom-drop">
+                                                        <select name="expectedReturn" id="ddlexpectedReturn" class="form-control">
+                                                            <option value="6%">5%</option>
+                                                            <option value="6%">6%</option>
+                                                            <option value="7%">7%</option>
+                                                            <option value="8%">8%</option>
+                                                            <option value="9%">9%</option>
+                                                            <option value="10%">10%</option>
+                                                            <option value="11%">11%</option>
+                                                            <option value="11%" selected="">12%</option>
+                                                            <option value="11%">13%</option>
+                                                            <option value="11%">14%</option>
+                                                            <option value="11%">15%</option>
+                                                            <option value="11%">16%</option>
+                                                            <option value="11%">17%</option>
+                                                            <option value="11%">18%</option>
+                                                            <option value="11%">19%</option>
+                                                            <option value="11%">20%</option>
+                                                            <option value="11%">21%</option>
+                                                            <option value="11%">22%</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <button type="button" class="btn btn-lg btn-success mt-4 btnCalculatePlanner">Calculate</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result-area mt-4 mt-md-5" id="dvResult" style="display:none;">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="result-left box-shadow p-3 p-md-4">
+                                                <div class="h5">Result</div>
+                                                <p>The amount that you need to invest to <br /> meet your target is  </p>
+                                                <div class="total-result">
+                                                    <span>&#x20b9; <span class="finalresult">781</span></span> monthly.
+                                                </div>
+                                                <img src="~/images/return-value-img.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 d-flex mt-4 mt-md-0">
+                                            <div class="result-right box-shadow p-3 p-md-4">
+                                                <form class="text-left text-sm-center">
+                                                    <div class="h6 mb-3">Enter your PAN to start investing</div>
+                                                    <input id="txtPAN" type="text" name="Enter PAN" placeholder="Enter PAN" class="form-control" readonly="readonly" value="@Session["PAN_No"].ToString()">
+                                                    <button type="button" class="btn btn-primary mt-3 submitPAN">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade kyc-varified-modal" id="kyc-varified-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="popup-icon">
+                    <img src="../images/thumb-icon.png" alt="" class="img-responsive">
+                </div>
+                <p>
+                    Great you are KYC verified.
+                    <br />
+                    <img src="../images/please-wait-loader.gif" alt="Please Wait" class="img-responsive please-wait-loader" />
+                    while we redirect you to help find a suitable fund
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade kyc-varified-modal" id="kyc-not-varified-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="popup-icon">
+                    <img src="../images/not-varified-icon.png" alt="" class="img-responsive">
+                </div>
+                <p>Your KYC is not verified.</p>
+                <div class="row">
+                    <div class="col-md-6"><a href="https://uatweb.sbimf.com/en-us/e-kyc/online-investment" target="_blank" class="btn btn-default mb-3 mb-md-0">Do e-KYC</a></div>  @*onclick="window.location.href='https://uatweb.sbimf.com/en-us/e-kyc/online-investment'"*@
+                    <div class="col-md-6"><button type="button" class="btn btn-primary" onclick="window.location.href='https://uatweb.sbimf.com/en-us/PDF/Form/KYC%20Forms/KYC%20Form%20-%20Individual.pdf'">Downloed KYC Form</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="txtYears" value="1" />
+<input type="hidden" id="txtAmount" value="10000" />
+<input type="hidden" id="txtInflation" value="1" />
+<input type="hidden" id="txtlumpsum" value="1" />
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Slider.js"></script>
+    <script type="text/javascript" src="~/Scripts/JS/Calc/il_familysolution.js"></script>
+    <script type="text/javascript" src="~/Scripts/JS/Calc/SIPCalc.js"></script>
+
+}
+
+

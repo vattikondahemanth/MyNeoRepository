@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .fournot {
+            color: #a2a2a2;
+            margin: 0;
+            font-weight: 700;
+            font-size: 36px;
+        }
+
+        .text-oops {
+            color: #10bcf0;
+            font-size: 68px;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+
+        .something-went {
+            margin: 40px 0 50px;
+            font-size: 36px;
+            color: #868686;
+        }
+
+        .btn-gotohome {
+            color: #10bcf0 !important;
+            padding: 8px 28px;
+            border-bottom: 2px solid #10bcf0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+            .btn-gotohome:hover {
+                background-color: #10bcf0;
+                color: #fff !important;
+                text-decoration: none;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+            }
+
+        .MT30 {
+            margin-top: 30px;
+        }
+
+        @@media only screen and (max-width: 767px) {
+            .text-oops {
+                font-size: 45px;
+            }
+
+            .fournot, .something-went {
+                font-size: 23px;
+            }
+
+            .btn-gotohome {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <br />
+    <center>
+        <div class="container MT30">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="text-oops">Oops!<span class="fournot"> </span></h1>
+                    <h4 class="something-went">Something went wrong.<br /> Please try again in sometime.</h4>
+                </div>
+            </div>
+        </div>
+        <a href=@Url.Action("Index", "Home")>Back</a>
+    </center>
+    <br />
+</body>
+</html>
+@*@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Error Details:</h4>
+<p>Controller Name: @Model.ControllerName</p>
+<p>Action Name: @Model.ActionName</p>
+<p>Exception: @Model.Exception</p>*@ 

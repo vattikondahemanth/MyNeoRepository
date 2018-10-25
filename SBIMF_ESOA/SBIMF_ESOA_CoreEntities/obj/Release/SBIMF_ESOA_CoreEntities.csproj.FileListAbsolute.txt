@@ -1,0 +1,9 @@
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\bin\Release\SBIMF_ESOA_CoreEntities.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\bin\Release\SBIMF_ESOA_CoreEntities.pdb
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\bin\Release\Newtonsoft.Json.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\bin\Release\Newtonsoft.Json.xml
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\obj\Release\SBIMF_ESOA_CoreEntities.csprojAssemblyReference.cache
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\obj\Release\SBIMF_ESOA_CoreEntities.csproj.CoreCompileInputs.cache
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\obj\Release\SBIMF_ESOA_CoreEntities.csproj.CopyComplete
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\obj\Release\SBIMF_ESOA_CoreEntities.dll
+E:\SBIMFProjects\SBIMF_ESOA\SBIMF_ESOA_CoreEntities\obj\Release\SBIMF_ESOA_CoreEntities.pdb

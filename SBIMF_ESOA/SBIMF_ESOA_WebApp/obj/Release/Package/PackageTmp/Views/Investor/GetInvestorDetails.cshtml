@@ -1,0 +1,39 @@
+﻿@model SBIMF_ESOA_CoreEntities.InvestorInfo
+
+@{
+    ViewBag.Title = "GetInvestorDetails";
+}
+
+
+
+
+<div>
+    <h4>Investor Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>  
+            @Html.DisplayNameFor(model => model.Investor_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Investor_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobileno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobileno)
+        </dd>
+
+    </dl>
+</div>

@@ -1,0 +1,129 @@
+﻿@model List<SBIMF_ESOA_CoreEntities.ReportScheme>
+@{
+    ViewBag.Title = "Investment Summary";
+}
+
+  <script type="text/javascript">
+            var key = @System.Convert.ToString(Session["Pass_Enc_Key"]).Trim()
+    </script>
+
+<section class="content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-lg-3 content-area-left mb-4">
+                <div class="card text-center box-shadow">
+                    <div class="welcome">Welcome</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="lblCustName">@System.Convert.ToString(Session["UserName"])</h5>
+                        <span class="separator"></span>
+                        <span class="folio-number">PAN: <label id="lblPAN">@System.Convert.ToString(Session["PAN_No"])</label></span>  <br />
+                        <span class="folio-number">Folio No: <label id="lblFolioNo">@System.Convert.ToString(Session["Folio_No"])</label></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 content-area-right">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-shadow invest-summary-chart-details-area p-4 text-center text-md-left">
+                            <h5>Overall Investment Summary</h5>
+                            <div class="invest-summary-chart-details">
+                                <div class="row align-items-center">
+                                    <div class="col-12">
+                                        <ul>
+                                            <li>Gain/Loss <span id="spanOGL" style="color:@System.Convert.ToString(Session["colorCode"])"><label id="lblOGL">@System.Convert.ToString(Session["Gain_Loss"])</label>%</span></li>
+                                            <li>Portfolio Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblOCurr">@System.Convert.ToString(Session["Tot_Portfolio_Val"])</label></span></li>
+                                            <li>Investment Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblOAmt">@System.Convert.ToString(Session["Tot_Inv_Amt"])</label></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="select-statement-period box-shadow mt-4">
+                    <div class="calender-area">
+                        <div class="select-cal">
+                            Your Statement Period
+                        </div>
+                        <div class="form-group row disabled-cal">
+                            <label for="staticEmail" class="col-6 col-sm-1 col-form-label pr-0">From</label>
+                            <div class="col-6 col-sm-2 pl-0 cal-separator">
+                                <input id="lblFrom" type="text" value="@Session["dtFrom"].ToString()" readonly="readonly" class="form-control" />
+                            </div>
+                            <label for="staticEmail" class="col-6 col-sm-1 col-form-label text-right">To</label>
+                            <div class="col-6 col-sm-3 pl-0">
+                                <input id="lblTo" type="text" value="@Session["dtTo"].ToString()" readonly="readonly" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4" id="dvSchChart">
+                    <div class="col-md-12">
+                        <div class="box-shadow static-chart-area p-4">
+
+                            <h5>
+                                Investments in <label id="lblFundCat"></label> Schemes <a href="@Url.Action("Invest_summary", "FundCategory")" class="links float-right back-btn">
+                                    <img src="@Url.Content("~/Content/images/back_btn_icon.png")">
+                                </a>
+                            </h5>
+
+
+                            <div class="chart-area">
+                                <p class="text-center">Click on the pie chart to view further details</p>
+
+                                <div class="chart-inner-area">
+                                    <div id="canvas-holder">
+                                        <p id="no_data" style="display:none;" class="text-center msg">There is no data to display...</p>
+                                        <div id="schChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="invest-summary-chart-details" style="display:none;">
+                                <div class="row align-items-center">
+                                    <div class="col-12">
+                                        <ul>
+                                            @*<li><span>Name:</span><label id="lblCustomerName"></label></li>*@
+                                            <li>Gain/Loss <span id="spanGL"><label id="lblGL"></label>%</span></li>
+                                            <li>Portfolio Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblTotRet"></label></span></li>
+                                            <li>Investment Value <span><i class="rupees-icon">&#x20b9;</i><label id="lblAmt"></label></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="SiteLoader" class="overlay-loader">
+            <div class="loader"></div>
+        </div>
+
+
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    @*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>*@
+    @*<script type="text/javascript" src="~/Scripts/JS/Charts/Loader.js"></script>
+            <script type="text/javascript" src="https://www.google.com/jsapi?autoload=
+        {'modules':[{'name':'visualization','version':'1.1','packages':
+        ['corechart']}]}"></script>*@
+    <script src="~/Scripts/aes.js"></script>
+    <script src="~/Scripts/JS/Common.js"></script>
+    <script src="~/Scripts/highcharts.js"></script>
+    <script src="~/Scripts/highcharts.src.js"></script>
+    <script type="text/javascript" src="~/Scripts/JS/Charts/SchemeChart.js"></script>
+}
+
+
+
